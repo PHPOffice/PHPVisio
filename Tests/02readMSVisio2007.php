@@ -1,8 +1,5 @@
 <?php
 
-	// http://www.aspose.com/docs/display/diagramnet/Working+with+Diagrams
-	// http://www.aspose.com/docs/display/diagramnet/Add+and+connect+shapes
-	
 	/** Error reporting */
 	error_reporting(E_ALL);
 
@@ -81,6 +78,6 @@
 	}
 	
 	// Echo done
-	echo date('H:i:s') . ' Done writing file.'.EOL;
+	echo date('H:i:s') . ' Done reading file.'.EOL;
 
 ?>

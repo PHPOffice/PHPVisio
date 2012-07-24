@@ -1,7 +1,4 @@
 <?php
-
-	// http://www.aspose.com/docs/display/diagramnet/Working+with+Diagrams
-	// http://www.aspose.com/docs/display/diagramnet/Add+and+connect+shapes
 	
 	/** Error reporting */
 	error_reporting(E_ALL);
@@ -51,16 +48,22 @@
 	$oCnctor1 = $oPage1->addConnector();
 	$oCnctor1->addLinkStart($oShape1, PHPVisio_Connectors::POINT_BOTTOM);
 	$oCnctor1->addLinkEnd($oShape2, PHPVisio_Connectors::POINT_TOP);
+	$oCnctor1->setLabel('Label1');
 	
 	// Save Dia file
 	echo date('H:i:s') . ' Write to Dia format'.EOL;
 	$objWriter = new PHPProject_Writer_Dia($oPHPVisio);
 	$objWriter->save(str_replace('.php', '.dia', __FILE__));
 	
-	// Save MSVisioXML file
-	echo date('H:i:s') . ' Write to MSVisioXML format'.EOL;
-	$objWriter = new PHPProject_Writer_MSVisioXML($oPHPVisio);
+	// Save MSVisio2007 file
+	echo date('H:i:s') . ' Write to MSVisio2007 format'.EOL;
+	$objWriter = new PHPProject_Writer_MSVisio2007($oPHPVisio);
 	$objWriter->save(str_replace('.php', '.vdx', __FILE__));
+
+	// Save MSVisio2013 file
+	echo date('H:i:s') . ' Write to MSVisio2007 format'.EOL;
+	$objWriter = new PHPProject_Writer_MSVisio2013($oPHPVisio);
+	$objWriter->save(str_replace('.php', '.vsdx', __FILE__));
 
 	// Echo done
 	echo date('H:i:s') . ' Done writing file.'.EOL;

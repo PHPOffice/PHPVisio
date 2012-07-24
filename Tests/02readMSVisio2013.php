@@ -1,5 +1,5 @@
 <?php
-	
+
 	/** Error reporting */
 	error_reporting(E_ALL);
 
@@ -19,7 +19,7 @@
 	// Create new PHPVisio object
 	echo date('H:i:s') . ' Create new PHPVisio object'.EOL;
 	$oPHPVisio = new PHPVisio();
-	$oPHPVisio->load('02sample.dia');
+	$oPHPVisio->load('02sample.vsdx');
 
 	// Set properties
 	echo date('H:i:s') . ' Set properties'.EOL;
