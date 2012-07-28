@@ -178,7 +178,7 @@ class PHPVisio_IOFactory
 	 *
 	 * @static
 	 * @access public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file
+	 * @param 	string 		$pFileName		The name of the visio/dia file
 	 * @return	PHPVisio
 	 * @throws	Exception
 	 */
@@ -192,7 +192,7 @@ class PHPVisio_IOFactory
 	 *
 	 * @static
 	 * @access public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file to identify
+	 * @param 	string 		$pFileName		The name of the visio/dia file to identify
 	 * @return	string
 	 * @throws	Exception
 	 */
@@ -209,7 +209,7 @@ class PHPVisio_IOFactory
 	 *
 	 * @static
 	 * @access	public
-	 * @param 	string 		$pFileName		The name of the spreadsheet file
+	 * @param 	string 		$pFileName		The name of the visio/dia file
 	 * @return	PHPVisio_Reader_IReader
 	 * @throws	Exception
 	 */
