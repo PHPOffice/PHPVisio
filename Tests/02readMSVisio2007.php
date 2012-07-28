@@ -18,8 +18,8 @@
 	
 	// Create new PHPVisio object
 	echo date('H:i:s') . ' Create new PHPVisio object'.EOL;
-	$oPHPVisio = new PHPVisio();
-	$oPHPVisio->load('02sample.vsd');
+	$objReader = PHPVisio_IOFactory::createReader('MSVisio2007');
+	$oPHPVisio = $objReader->load('02sample.vsd');
 
 	// Set properties
 	echo date('H:i:s') . ' Set properties'.EOL;
@@ -32,13 +32,13 @@
 	
 	// ForEach Page
 	echo 'Pages >'.EOL;
-	$oPages = $oPHPVisio->getPages();
-	foreach ($oPages as $oPage){
-		echo '>> Name : '.$oPage->getTitle().EOL;
-		echo '>> ID : '.$oPage->getID().EOL;
+	$oSheets = $oPHPVisio->getAllSheets();
+	foreach ($oSheets as $oSheet){
+		echo '>> Name : '.$oSheet->getTitle().EOL;
+		echo '>> ID : '.$oSheet->getID().EOL;
 		
 		echo 'Connectors >'.EOL;
-		$oConnectors = $oPage->getConnectors();
+		$oConnectors = $oSheet->getConnectors();
 		foreach ($oConnectors as $oConnector){
 			echo '>>>> From : '.$oConnector->getShapeStart().EOL;
 			echo '>>>> To : '.$oConnector->getShapeEnd().EOL;
@@ -47,7 +47,7 @@
 		}
 		
 		echo 'Shapes >'.EOL;
-		$oShapes = $oPage->getShapes();
+		$oShapes = $oSheet->getShapes();
 		foreach ($oShapes as $oShape){
 			echo '>>>> ID : '.$oShape->getID().EOL;
 			echo '>>>> Name : '.$oShape->getName().EOL;

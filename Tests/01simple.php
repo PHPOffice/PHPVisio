@@ -30,7 +30,7 @@
 
 	// Add some data
 	echo date('H:i:s') . ' Add page'.EOL;
-	$oPage1 =  $oPHPVisio->addPage();
+	$oPage1 =  $oPHPVisio->createSheet();
 	
 	echo date('H:i:s') . ' Add rectangle shape'.EOL;
 	$oShape1 = $oPage1->addShape();
@@ -46,23 +46,23 @@
 	
 	echo date('H:i:s') . ' Add connector'.EOL;
 	$oCnctor1 = $oPage1->addConnector();
-	$oCnctor1->addLinkStart($oShape1, PHPVisio_Connectors::POINT_BOTTOM);
-	$oCnctor1->addLinkEnd($oShape2, PHPVisio_Connectors::POINT_TOP);
+	$oCnctor1->setLinkStart($oShape1, PHPVisio_Connector::POINT_BOTTOM);
+	$oCnctor1->setLinkEnd($oShape2, PHPVisio_Connector::POINT_TOP);
 	$oCnctor1->setLabel('Label1');
 	
 	// Save Dia file
 	echo date('H:i:s') . ' Write to Dia format'.EOL;
-	$objWriter = new PHPProject_Writer_Dia($oPHPVisio);
+	$objWriter = PHPVisio_IOFactory::createWriter($oPHPVisio, 'Dia');
 	$objWriter->save(str_replace('.php', '.dia', __FILE__));
 	
 	// Save MSVisio2007 file
 	echo date('H:i:s') . ' Write to MSVisio2007 format'.EOL;
-	$objWriter = new PHPProject_Writer_MSVisio2007($oPHPVisio);
+	$objWriter = PHPVisio_IOFactory::createWriter($oPHPVisio, 'MSVisio2007');
 	$objWriter->save(str_replace('.php', '.vdx', __FILE__));
 
 	// Save MSVisio2013 file
-	echo date('H:i:s') . ' Write to MSVisio2007 format'.EOL;
-	$objWriter = new PHPProject_Writer_MSVisio2013($oPHPVisio);
+	echo date('H:i:s') . ' Write to MSVisio2013 format'.EOL;
+	$objWriter = PHPVisio_IOFactory::createWriter($oPHPVisio, 'MSVisio2013');
 	$objWriter->save(str_replace('.php', '.vsdx', __FILE__));
 
 	// Echo done
