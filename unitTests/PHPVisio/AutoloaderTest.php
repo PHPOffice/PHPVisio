@@ -46,11 +46,11 @@ class AutoloaderTest extends PHPUnit_Framework_TestCase
 
     public function testAutoloadInstantiateSuccess()
     {
-        $result = new PHPVisio_Shape(1,2,3);
+        $result = new PHPVisio(1,2,3);
         //    Must return an object...
         $this->assertTrue(is_object($result));
         //    ... of the correct type
-        $this->assertTrue(is_a($result,'PHPVisio_Shape'));
+        $this->assertTrue(is_a($result,'PHPVisio'));
     }
 
 }
