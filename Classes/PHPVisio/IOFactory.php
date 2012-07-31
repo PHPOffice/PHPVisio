@@ -120,7 +120,7 @@ class PHPVisio_IOFactory
 	 * @static
 	 * @access	public
 	 * @param	PHPVisio $phpProject
-	 * @param	string  $writerType	Example: Excel2007
+	 * @param	string  $writerType	Example: MSVisio2007
 	 * @return	PHPVisio_Writer_IWriter
 	 * @throws	Exception
 	 */
