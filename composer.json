@@ -1,0 +1,30 @@
+{
+    "name": "phpoffice/phpvisio",
+    "description": "PHPVisio - Read, Create and Write Diagrams documents in PHP",
+    "keywords": ["PHP","Visio", "Dia", "vsdx","vsd","diagram"],
+    "homepage": "http://phpoffice.github.io",
+    "type": "library",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Mark Baker"
+        },
+        {
+            "name": "Franck Lefevre",
+            "homepage": "http://blog.rootslabs.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "ext-xml": "*"
+    },
+    "recommend": {
+        "ext-zip": "*",
+        "ext-gd2": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "PHPVisio": "Classes/"
+        }
+    }
+}
