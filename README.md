@@ -1,1 +1,1 @@
-PHPVisio is an open source project licensed under the terms of [LGPL version 3](LICENSE.md).
+PHPVisio is an open source project licensed under the terms of [LGPL version 3](COPYING.LESSER).
