@@ -134,7 +134,7 @@ class PHPVisio_IOFactory
 				$className = str_replace('{0}', $writerType, $searchLocation['class']);
 
 				$instance = new $className($phpProject);
-				if ($instance !== NULL) {
+				if ($instance !== null) {
 					return $instance;
 				}
 			}
@@ -163,7 +163,7 @@ class PHPVisio_IOFactory
 				$className = str_replace('{0}', $readerType, $searchLocation['class']);
 
 				$instance = new $className();
-				if ($instance !== NULL) {
+				if ($instance !== null) {
 					return $instance;
 				}
 			}
