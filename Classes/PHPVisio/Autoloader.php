@@ -63,7 +63,7 @@ class PHPVisio_Autoloader
 	public static function Load($pClassName){
 		if ((class_exists($pClassName)) || (strpos($pClassName, 'PHPVisio') !== 0)) {
 			//	Either already loaded, or not a PHPVisio class request
-			return FALSE;
+			return false;
 		}
 
 		$pClassFilePath = PHPVISIO_ROOT .
@@ -72,7 +72,7 @@ class PHPVisio_Autoloader
 
 		if ((file_exists($pClassFilePath) === false) || (is_readable($pClassFilePath) === false)) {
 			//	Can't load
-			return FALSE;
+			return false;
 		}
 
 		require($pClassFilePath);

@@ -194,7 +194,7 @@ class PHPVisio_DocumentProperties
 	 * @return	PHPVisio_DocumentProperties
 	 */
 	public function setCreated($pValue = null) {
-		if ($pValue === NULL) {
+		if ($pValue === null) {
 			$pValue = time();
 		} elseif (is_string($pValue)) {
 			if (is_numeric($pValue)) {
@@ -224,7 +224,7 @@ class PHPVisio_DocumentProperties
 	 * @return	PHPVisio_DocumentProperties
 	 */
 	public function setModified($pValue = null) {
-		if ($pValue === NULL) {
+		if ($pValue === null) {
 			$pValue = time();
 		} elseif (is_string($pValue)) {
 			if (is_numeric($pValue)) {
@@ -436,13 +436,13 @@ class PHPVisio_DocumentProperties
 	 *						'b' : Boolean
 	 * @return	PHPVisio_DocumentProperties
 	 */
-	public function setCustomProperty($propertyName,$propertyValue='',$propertyType=NULL) {
-		if (($propertyType === NULL) || (!in_array($propertyType,array(self::PROPERTY_TYPE_INTEGER,
+	public function setCustomProperty($propertyName,$propertyValue='',$propertyType=null) {
+		if (($propertyType === null) || (!in_array($propertyType,array(self::PROPERTY_TYPE_INTEGER,
 																	   self::PROPERTY_TYPE_FLOAT,
 																	   self::PROPERTY_TYPE_STRING,
 																	   self::PROPERTY_TYPE_DATE,
 																	   self::PROPERTY_TYPE_BOOLEAN)))) {
-			if ($propertyValue === NULL) {
+			if ($propertyValue === null) {
 				$propertyType = self::PROPERTY_TYPE_STRING;
 			} elseif (is_float($propertyValue)) {
 				$propertyType = self::PROPERTY_TYPE_FLOAT;
@@ -479,7 +479,7 @@ class PHPVisio_DocumentProperties
 				return '';
 				break;
 			case 'null'		:	//	Null
-				return NULL;
+				return null;
 				break;
 			case 'i1'		:	//	1-Byte Signed Integer
 			case 'i2'		:	//	2-Byte Signed Integer
@@ -510,7 +510,7 @@ class PHPVisio_DocumentProperties
 				return strtotime($propertyValue);
 				break;
 			case 'bool'		:	//	Boolean
-				return ($propertyValue == 'true') ? True : False;
+				return ($propertyValue == 'true') ? true : false;
 				break;
 			case 'cy'		:	//	Currency
 			case 'error'	:	//	Error Status Code
